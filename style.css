@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+*,
+::after,
+::before,
+* > * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
+  padding: 1.5em;
+  background-color: hsl(29, 63%, 92%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1em;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1.5em;
+  background-color: hsl(10, 79%, 65%);
+  border-radius: 0.4em;
+  color: white;
+}
+
+.content {
+  background-color: hsl(38, 100%, 98%);
+  padding: 1em 1.5em;
+  width: 100%;
+  border-radius: 0.4em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.content p {
+  color: hsl(28, 6%, 55%);
+}
+
+.content__header > h2 {
+  font-weight: 500;
+  color: hsl(24, 49%, 15%);
+}
+
+.content__main {
+  border-bottom: 2px solid hsl(28, 55%, 94%);
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  justify-content: space-between;
+  font-size: 0.8em;
+}
+
+.chart_main {
+  column-span: 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  row-gap: 1em;
+  margin-block: 2em;
+}
+
+.item_chart {
+  width: 90%;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: hsl(10, 79%, 65%);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.item_chart:hover {
+  background-color: hsl(10, 100%, 76%);
+}
+
+.item_max > div {
+
+  background-color: hsl(188, 34%, 61%);
+  transition: 0.3s;
+}
+
+.item_max > div:hover {
+  background-color: hsl(187, 49%, 80%);
+}
+
+.item_prix {
+  background-color: hsl(24, 49%, 15%);
+  color: white;
+  padding: 4px 4px;
+  border-radius: 4px;
+  font-weight: 400;
+  /* visibility: hidden; */
+  opacity: 0;
+  transition: .4s ease;
+}
+
+.content__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.thisMonth > p,
+.lastMonth > p {
+  font-size: 0.8em;
+}
+
+.thisMonth > h1 {
+  color: hsl(24, 49%, 15%);
+}
+
+.lastMonth {
+  text-align: right;
+}
+
+.lastMonth span {
+  color: hsl(24, 49%, 15%);
+}
+
+
+.content__main:hover .chart_main .item_prix {
+  opacity: 0;
+  transition: .2s ease;
+}
+
+.content__main:hover .chart_main:hover .item_prix {
+  transition: .2s ease;
+  opacity: 1;
+}
+
+@media screen and (min-width: 600px) { 
+  .header, .content {
+    width: 100%;
+    max-width: 600px ;
+  }
+
+  .item_chart {
+    width: 3em;
+  }
+  
+}
